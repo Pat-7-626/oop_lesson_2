@@ -135,6 +135,13 @@ print(f"Average number of passes made by midfielders: {midfielder.aggregate(lamb
 
 print()
 
+# task 4
+print("The average fare paid by passengers in the first class versus in the third class")
+first = table5.filter(lambda x: x["class"] == "1")
+third = table5.filter(lambda x: x["class"] == "3")
+print(f"Average fare paid by passengers in the first class: {first.aggregate(lambda x: sum(x) / len(x), "fare"):.2f}")
+print(f"Average fare paid by passengers in the third class: {third.aggregate(lambda x: sum(x) / len(x), "fare"):.2f}")
+
 """
 print("Test filter: only filtering out cities in Italy") 
 my_table1_filtered = my_table1.filter(lambda x: x['country'] == 'Italy')
