@@ -142,6 +142,13 @@ third = table5.filter(lambda x: x["class"] == "3")
 print(f"Average fare paid by passengers in the first class: {first.aggregate(lambda x: sum(x) / len(x), "fare"):.2f}")
 print(f"Average fare paid by passengers in the third class: {third.aggregate(lambda x: sum(x) / len(x), "fare"):.2f}")
 
+print()
+
+# Titanic 2
+print("Find the total number of male passengers embarked at Southampton")
+target = table5.filter(lambda x: x["gender"] == "M").filter(lambda x: x["embarked"] == "Southampton")
+print(f"The number: {len(target.table)}")
+
 """
 print("Test filter: only filtering out cities in Italy") 
 my_table1_filtered = my_table1.filter(lambda x: x['country'] == 'Italy')
